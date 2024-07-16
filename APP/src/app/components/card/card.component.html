@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="SS col-md-7 d-flex 
+      justify-content: flex-start;align-items-center">
+      <div class="card" [ngStyle]="{'background-image': 'url(' + selectedBackground + ')'}">
+        <textarea #textarea class="form-control" [(ngModel)]="cardText" [ngStyle]="
+         {
+        'color': selectedTextColor, 
+        'font-size': selectedTextSize + 'em',
+        'text-align': selectedTextAlign   
+      }">
+          </textarea>
+      </div>
+    </div>
+
+
+    <div class="background-options mt-3">
+      <button (click)="selectBackground('/assets/images/Background1.jpg')" class="btn btn-outline-primary">
+        <img src="/assets/images/Background1.jpg" alt="רקע 1" class="img-thumbnail">
+      </button>
+      <button (click)="selectBackground('/assets/images/Background2.png')" class="btn btn-outline-primary">
+        <img src="/assets/images/Background2.png" alt="רקע 2" class="img-thumbnail">
+      </button>
+      <button (click)="selectBackground('/assets/images/Background3.png')" class="btn btn-outline-primary">
+        <img src="/assets/images/Background3.png" alt="רקע 3" class="img-thumbnail">
+      </button>
+    </div>
+  </div>
+  <div class="col-md-5 right-side" style="margin-right: 30px;">
+    <div class="form-group text-options inputs">
+      <label for="textColor" class="form-label">בחר צבע טקסט</label>
+      <input type="color" id="textColor" [(ngModel)]="selectedTextColor" class="form-control">
+
+      <label for="textSize" class="form-label mt-3">בחר גודל טקסט</label>
+      <input type="number" min="0.1" id="textSize" [(ngModel)]="selectedTextSize" step="0.1" class="form-control">
+
+      <label for="textAlign" class="form-label mt-3">בחר יישור טקסט</label>
+      <select id="textAlign" [(ngModel)]="selectedTextAlign" class="form-control">
+        <option value="left">שמאל</option>
+        <option value="center">מרכז</option>
+        <option value="right">ימין</option>
+      </select>
+    </div>
+
+    <div class="bt">
+      <div class="mt-3">
+        <button (click)="sendEmail()" class="btn btn-success">שתף</button>
+      </div>
+      <div class="mt-3">
+        <button class="btn btn-success" (click)="openPopup()">הצג ברכות קודמות</button>
+      </div>
+      <div class="mt-3">
+        <button class="btn btn-success" (click)="saveCard()">שמור</button>
+      </div>
+      <div class="mt-3">
+        <button class="btn btn-success" (click)="showCard()">תצוגה מקדימה</button>
+      </div>
+
+    </div>
+  </div>
+
+
+
+</div>

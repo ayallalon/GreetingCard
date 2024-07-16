@@ -1,0 +1,10 @@
+<h2>בחר ברכה לעריכה</h2>
+<div class="card-list">
+    <div *ngFor="let card of cards" class="card-item" (click)="selectCard(card)">
+        <div class="card-background" [ngStyle]="{ 'background-image': 'url(' + card.Background + ')' }">
+            <div class="card-overlay">
+                <div class="card-text">{{ card.Text }}</div>
+            </div>
+        </div>
+    </div>
+</div>

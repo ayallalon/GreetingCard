@@ -1,0 +1,111 @@
+.container-fluid {
+    padding: 30px;
+    padding-left: 150px;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+   
+}
+
+.card {
+    position: relative;
+    width: 100mm;
+    height: 120mm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-size: cover; /* Change to cover */
+    background-repeat: no-repeat; /* Ensure no repeat */
+    background-position: center; /* Center the background */
+     border: 2px solid rgb(205, 197, 197);
+}
+
+
+
+textarea {
+    resize: none;
+    border: none;
+    background: transparent;
+    outline: none;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: center;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.btn-choose {
+    background-color: aliceblue
+}
+
+.SS {
+    width: 90mm;
+    height: 120mm;
+}
+
+textarea:focus {
+    border: 2px solid #010101;
+    resize: both;
+}
+
+.text-options {
+    margin-top: 20px;
+
+}
+
+.right-side {
+    margin-top: -150px;
+}
+.background-options {
+    display: flex;
+    justify-content: flex-start;
+    margin-right: -250px;
+}
+
+.background-options .btn {
+    display: inline-flex; /* Add this line */
+    align-items: center;
+    margin: 20px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.background-options .img-thumbnail {
+    max-width: 100px; /* Change width to max-width */
+    max-height: 100px; /* Change height to max-height */
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.background-options .img-thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.inputs {
+    margin: 150px;
+    margin-bottom: 0;
+}
+
+.bt {
+    display: flex;
+    margin-top: 7px;
+    justify-content: center;
+}
+
+.btn-success {
+    margin: 8px;
+    color: black;
+    background-color: aliceblue;
+    border: 1px solid transparent;
+}
+
+label {
+    display: flex;
+    justify-content: right;
+}

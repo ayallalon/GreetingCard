@@ -1,0 +1,21 @@
+<div class="outer-container">
+<div class="inner-container">
+    <form (ngSubmit)="onSubmit()">
+        <h2>הרשמה</h2>
+        <div>
+            <input class="test" placeholder="Full Name" type="text" id="UserName" name="UserName" [(ngModel)]="newUser.UserName" required>
+        </div>
+        <div>
+            <input type="text" placeholder="ID Number" id="UserID" name="UserID" [(ngModel)]="newUser.UserID" required>
+        </div>
+        <div>
+            <input type="email" placeholder="Email" id="Email" name="Email" [(ngModel)]="newUser.Email" required>
+        </div>
+        <div>
+            <input type="password" placeholder="Password" id="Password" name="Password" [(ngModel)]="newUser.Password" required>
+        </div>
+       
+        <button type="button"  (click)="setAdmin()">המשך כמנהל</button>
+        <button type="submit">הרשם</button>     
+    </form>
+</div></div>

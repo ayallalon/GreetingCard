@@ -1,0 +1,7 @@
+C:\Users\r1alon\Desktop\GreetingCardDB\GreetingCardConsoleApp\GreetingCardConsoleApp\bin\Debug\GreetingCardConsoleApp.exe.config
+C:\Users\r1alon\Desktop\GreetingCardDB\GreetingCardConsoleApp\GreetingCardConsoleApp\bin\Debug\GreetingCardConsoleApp.exe
+C:\Users\r1alon\Desktop\GreetingCardDB\GreetingCardConsoleApp\GreetingCardConsoleApp\bin\Debug\GreetingCardConsoleApp.pdb
+C:\Users\r1alon\Desktop\GreetingCardDB\GreetingCardConsoleApp\GreetingCardConsoleApp\obj\Debug\GreetingCardConsoleApp.csproj.AssemblyReference.cache
+C:\Users\r1alon\Desktop\GreetingCardDB\GreetingCardConsoleApp\GreetingCardConsoleApp\obj\Debug\GreetingCardConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\r1alon\Desktop\GreetingCardDB\GreetingCardConsoleApp\GreetingCardConsoleApp\obj\Debug\GreetingCardConsoleApp.exe
+C:\Users\r1alon\Desktop\GreetingCardDB\GreetingCardConsoleApp\GreetingCardConsoleApp\obj\Debug\GreetingCardConsoleApp.pdb
