@@ -10,7 +10,7 @@ async function createUser(newUser){
             .input('UserName', sql.NVarChar, newUser.UserName)
             .input('Email', sql.NVarChar, newUser.Email)
             .input('Password', sql.NVarChar, newUser.Password)
-            .query('INSERT INTO Users (UserID, UserName, Email, Password) OUTPUT INSERTED.UserID VALUES (@UserID, @UserName, @Email, @Password)');
+            .execute('CreateUser')
            // console.log(result.recordsets[0][0])
          return {success: true, message: 'user created',res: result.recordsets}
     }catch(err){

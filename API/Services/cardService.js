@@ -6,7 +6,7 @@ async function getAllCards() {
     try {
         const pool = await sql.connect()
         const result = await pool.request()
-            .query('SELECT * FROM Cards')
+            .execute('GetAllCards')
         return { success: true, cards: result.recordset }
     } catch (err) {
         return { success: false, message: 'Failed to retrieve cards: ' + err }
@@ -19,7 +19,7 @@ async function getCardById(cardId) {
         const pool = await sql.connect()
         const result = await pool.request()
             .input('CardID',cardId)
-            .query('SELECT * FROM Cards WHERE CardID = @CardID');
+             .execute('GetCardById')
                 return { success: true, card: result.recordset[0] }
       } catch (err) {
         return { success: false, message: 'Failed to retrieve card: ' + err }
@@ -36,8 +36,7 @@ async function updateCard(cardId, cardData) {
             .input('Style', sql.NVarChar, cardData.Style)
             .input('Text', sql.NVarChar, cardData.Text)
             .input('Background', sql.NVarChar, cardData.Background)
-            .query('UPDATE Cards SET UserID = @UserID, Style = @Style, Text = @Text, Background = @Background WHERE CardID = @CardID');
-
+            .execute('UpdateCard')
             return { success: true, message: 'Card updated successfully' }
            } catch (err) {
         return { success: false, message: 'Failed to update card: ' + err }
@@ -54,7 +53,7 @@ async function createCard(newCard) {
             .input('Style', sql.NVarChar, newCard.Style)
             .input('Text', sql.NVarChar, newCard.Text)
             .input('Background', sql.NVarChar, newCard.Background)
-            .query('INSERT INTO Cards (UserID, Style, Text, Background) OUTPUT INSERTED.CardID VALUES (@UserID, @Style, @Text, @Background)')
+            .execute('CreateCard')
         const newCardID = res.recordset[0].CardID; 
         console.log('New CardID:', newCardID);
         return { success: true, message: 'card created',CardID: newCardID }
