@@ -21,19 +21,25 @@ namespace GreetingCardConsoleApp
                 Console.WriteLine("Connection successfull...");
 
                 StringBuilder stringBuilder = new StringBuilder();
-                string query = "SELECT * FROM Users";
+                string procedureName = "GetAllUsers";
 
-                SqlCommand command = new SqlCommand(query, connection);
-                SqlDataReader reader = command.ExecuteReader();
-                int userNumber = 1;
-                while (reader.Read())
+                using (SqlCommand command = new SqlCommand(procedureName, connection))
                 {
-                    stringBuilder.AppendLine($"User {userNumber++}: UserID: {reader["UserID"]}, UserName: {reader["UserName"]}, Email: {reader["Email"]}, Password: {reader["Password"]}");
-                }
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
 
-                Console.WriteLine(stringBuilder.ToString());
-                Console.WriteLine($"Total number of rows: {userNumber}");
-                reader.Close();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        int userNumber = 1;
+                        while (reader.Read())
+                        {
+                            stringBuilder.AppendLine($"User {userNumber++}: UserID: {reader["UserID"]}, UserName: {reader["UserName"]}, Email: {reader["Email"]}, Password: {reader["Password"]}");
+                        }
+
+                        Console.WriteLine(stringBuilder.ToString());
+                        Console.WriteLine($"Total number of rows: {userNumber - 1}");
+                    }
+                }
+            
 
             }
             catch (Exception ex)
